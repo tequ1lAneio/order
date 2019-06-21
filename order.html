@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script src="./1-data.js"></script>
+	<script>
+		let array = [16,1,5,23,3,7,55]
+
+		// bubbleSort
+		
+		const sortBubble = (arr) => {
+			for (let i = 0; i < arr.length; i ++) {
+				for (let j = 0; j < arr.length - i - 1; j ++) {
+					if (arr[j] > arr[j + 1]) {
+						let temp = arr[j]
+						arr[j] = arr[j + 1]
+						arr[j + 1] = temp
+					}
+				}
+			}
+			return arr
+		}
+
+
+		// insertSort
+		const insertSort = (arr) => {
+			let startIndex = 1
+			for (let i = startIndex; i < arr.length; i ++) {
+				let lastIndex = i - 1
+				let current = arr[i]
+				while (current < arr[lastIndex]) {
+					arr[lastIndex + 1] = arr[lastIndex]
+					lastIndex --
+				}
+				arr[lastIndex + 1] = current
+			}
+			return arr
+		}
+
+		const insertSortQueue = (arr) => {
+			let ordered = []
+			let queue = arr
+			while (queue.length > 0) {
+				let current = queue.shift()
+				let insertIndex = 0
+				for (let i = 0; i < ordered.length; i ++) {
+					if (ordered[i] >= current) {
+						insertIndex ++
+					}
+				}
+				ordered.splice(insertIndex, 0, current)
+			}
+			return ordered
+		}
+
+
+		const chooseSort = (arr) => {
+			let currentIndex = 0, min
+			for (let i = 0; i < arr.length; i ++) {
+				for (let k = currentIndex; k < arr.length - 1; k ++) {
+					if (!min) min = arr[k]
+				}
+				currentIndex ++
+			}
+		}
+
+
+	</script>
+</body>
+</html>
