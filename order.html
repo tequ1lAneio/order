@@ -5,7 +5,6 @@
 	<title>Document</title>
 </head>
 <body>
-	<script src="./1-data.js"></script>
 	<script>
 		let array = [16,1,5,23,3,7,55]
 
@@ -56,18 +55,32 @@
 			return ordered
 		}
 
-
+		// chooseSort
 		const chooseSort = (arr) => {
-			let currentIndex = 0, min
+			let currentIndex = 0, minIndex
 			for (let i = 0; i < arr.length; i ++) {
-				for (let k = currentIndex; k < arr.length - 1; k ++) {
-					if (!min) min = arr[k]
+				minIndex = currentIndex
+				for (let k = currentIndex; k < arr.length; k ++) {
+					if (arr[k] < arr[minIndex]) {
+						minIndex = k
+					}
 				}
+				let temp = arr[minIndex]
+				arr[minIndex] = arr[currentIndex]
+				arr[currentIndex] = temp
 				currentIndex ++
 			}
+			return arr
 		}
 
-		const
+
+
+
+		// hillSort
+		const hillSort = (arr) => {
+
+			return arr
+		}
 
 	</script>
 </body>
